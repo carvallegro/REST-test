@@ -1,0 +1,11 @@
+websites:
+  - name: OMS
+    url: www.google.com
+    category: changelog
+    authentication:
+      login: toto
+      password: tata
+
+  - name: Dispo
+    url: www.yahoo.com
+    category: comment
