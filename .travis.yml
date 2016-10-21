@@ -1,8 +1,12 @@
 language: python
 python:
-  - "3.4"
-
-# command to install dependencies
-install: "pip install -r requirements.txt"
-# command for running tests
+- '3.4'
+install: pip install -r requirements.txt
 script: make test
+deploy:
+  provider: heroku
+  api_key:
+    secure: TAhQrzymcag5vIamkDBmTTUeI3/0lM9/5B8Cuf4aFGMzo88G1njWO+YSNF60Xn3b2Fwuixf3Hljj6pKn3mcJOe4A7KmLrXI5xDxmv4oVouvnt+ax8Zr9Tv1NvgXkMG7hLrrUlO+nItdIzAj/VaJ8oE2rZIlyqeD56K2Iytm3pXqvAKz8boO0JyC3Hcra5cFm8pJ4jAfbPgNjEo3Ppvo7tggUx1j5iQaRN8hcR1TxUc5lCPMEmlx89Xh6S8edyrOMjw56SHAg+ObbZaVYY6uFpW5rwg3kMAn1/azEqsRbbY9y9ZJnZtML8U9/8ihDhEpBJ+FO/z9EafKi+903mXLfb26NX74ofNBOpWUFa6p4wwRdzLTVjohQqTTej4OZsfz/TKMTgbmke6u+qIRSP+pEESBhA+EJywbVrNyw2FwlHL4D7LEp+hw67YU2uM90+RUeQWDzGZQO+ZsnYPXopqwtHz1b7J1aYp04YsZxUs4iLbW+Uk7QmIGSoThzi36IkKRN1b573wYzbzF7/Siq8oeGO/0TuJroRfNkUZkRDqtOjOt66ZQ4GEi5HQwsoQZ7zaVWZUtt2B78uObz+vg8xxiRiaUlPLqvdA2OmsiRgTMp5gTEhiO2CEI4opeQ5u3kH9CDghlv9KJd0yk/P1M+QjE+jaMZujVdopAIrC0ZMhQIsu0=
+  app: REST-test
+  sudo on:
+    repo: carvallegro/REST-test
