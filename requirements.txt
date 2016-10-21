@@ -1,6 +1,7 @@
 requests
 flask
+httmock
 pytest
 pytest-cov
 pyYaml
-httmockt
+python-coveralls

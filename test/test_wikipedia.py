@@ -1,6 +1,5 @@
 from unittest import TestCase
 from httmock import urlmatch, HTTMock, all_requests, response
-import json
 
 from src.services import get_wikipedia
 
@@ -30,3 +29,4 @@ class TestWikipedia(TestCase):
         assert result == {'message': 'API rate limit exceeded'}
 
     # Todo more tests !!
+    # and more and more
