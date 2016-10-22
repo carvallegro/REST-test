@@ -7,7 +7,7 @@ install:
 script:
 #  - python -m pytest
 #  - coverage run --source=test app.py test
-  - py.test tests/ --doctest-modules -v --cov application --cov-report term-missing
+#  - py.test test/ --doctest-modules -v --cov application --cov-report term-missing
 after_success:
   - coveralls
 deploy:
