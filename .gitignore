@@ -1,0 +1,9 @@
+
+.cache/
+.idea/misc.xml
+.idea/modules.xml
+.idea/rest_test.iml
+.idea/workspace.xml
+static/
+templates/
+test/__pycache__/
