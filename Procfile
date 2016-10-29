@@ -1,2 +1,1 @@
-web: export FLASK_APP=app.py; python -m flask run
-ps:scale web=1
+web: gunicorn app:app
