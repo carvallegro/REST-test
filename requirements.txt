@@ -3,5 +3,4 @@ flask
 httmock
 pytest
 pytest-cov
-pyYaml
 python-coveralls
