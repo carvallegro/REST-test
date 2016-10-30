@@ -28,10 +28,10 @@ class Script {
         // request.data.text         {string}
         // request.data.trigger_word {string}
 
+        let match;
+
         // Change the URL and method of the request
         // match = request.data.text.match(/^pr\s(ls|list)/);
-        // let match;
-
         return {
             url: request.url + '/test',
             headers: request.headers,
@@ -50,10 +50,10 @@ class Script {
         // response.content_raw {string/object}
         // response.headers     {object}
 
-        var text = [];
-        response.content.forEach(function (pr) {
-            text.push('> ' + pr.state + ' [#' + pr.number + '](' + pr.html_url + ') - ' + pr.title);
-        });
+        //var text = [];
+        //response.content.forEach(function (pr) {
+        //    text.push('> ' + pr.state + ' [#' + pr.number + '](' + pr.html_url + ') - ' + pr.title);
+        //});
 
         // Return false will abort the response
         // return false;
@@ -63,24 +63,9 @@ class Script {
 
         return {
             content: {
-                text: text,
+                text: response.content_raw,
                 parseUrls: false
-                // "attachments": [{
-                //   "color": "#FF0000",
-                //   "author_name": "Rocket.Cat",
-                //   "author_link": "https://demo.rocket.chat/direct/rocket.cat",
-                //   "author_icon": "https://demo.rocket.chat/avatar/rocket.cat.jpg",
-                //   "title": "Rocket.Chat",
-                //   "title_link": "https://rocket.chat",
-                //   "text": "Rocket.Chat, the best open source chat",
-                //   "fields": [{
-                //     "title": "Priority",
-                //     "value": "High",
-                //     "short": false
-                //   }],
-                //   "image_url": "https://rocket.chat/images/mockup.png",
-                //   "thumb_url": "https://rocket.chat/images/mockup.png"
-                // }]
+
             }
         };
     }
