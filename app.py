@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello World!'
 
-@app.route('/test', methods=['GET'])
+@app.route('/test', methods=['GET', 'POST'])
 def test_rocketchat():
     return json.dumps({
            "text":"HOLa fdfs",
