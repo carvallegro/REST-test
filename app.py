@@ -10,9 +10,9 @@ def hello_world():
 
 @app.route('/test')
 def test_rocketchat():
-    return '{' \
-           '"text":"HOLa fdfs"' \
-           '}'
+    return json.dumps({
+           "text":"HOLa fdfs"
+           })
 
 if __name__ == '__main__':
     app.run()
