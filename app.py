@@ -1,5 +1,5 @@
 from flask import Flask
-from src.endpoints.rocket_chat import rocket_chat
+from endpoints.rocket_chat import rocket_chat
 
 app = Flask(__name__)
 app.register_blueprint(rocket_chat, url_prefix='/rocketchat')

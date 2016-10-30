@@ -1,3 +1,4 @@
+./src
 gunicorn
 requests
 flask
