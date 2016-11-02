@@ -28,10 +28,16 @@ class Script {
         // request.data.text         {string}
         // request.data.trigger_word {string}
 
-        let match;
+        let args;
+        args = request.data.text.replace(request.data.trigger_word, '').trim().split(' ');
+        if (DiscourseParamsUtils.matchesHelpParam(args)) {
+            return {
+                message: {
+                    text: DiscourseParamsUtils.help()
+                }
+            };
+        }
 
-        // Change the URL and method of the request
-        // match = request.data.text.match(/^pr\s(ls|list)/);
         return {
             url: request.url + '/test',
             headers: request.headers,
@@ -63,10 +69,19 @@ class Script {
 
         return {
             content: {
-                text: response.content_raw,
-                parseUrls: false
-
+                text: '```' + response.content_raw + '```'
             }
         };
+    }
+}
+
+class DiscourseParamsUtils {
+    static matchesHelpParam(args) {
+        return args.length == 1 && args[0] === '--help';
+    }
+
+    static help() {
+        return ['*Help for Discourse commands :*',
+            '   `--user-infos=<username>` : get infos about user in parameter.'].join('\n');
     }
 }

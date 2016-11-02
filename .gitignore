@@ -4,6 +4,5 @@
 .idea/modules.xml
 .idea/rest_test.iml
 .idea/workspace.xml
-static/
 templates/
-test/__pycache__/
+**/__pycache__/
