@@ -12,7 +12,9 @@ You can generate your API key at `<your_discourse_url>/admin/users/8/<username>`
 
 ## __problems for now__ : 
 can't make pytest pass in CLI because of a import error. pytest command is : `py.test test/ --doctest-modules -v --cov application --cov-report term-missing`
-Httmock is in the reqquirements and has been imported by PyCharm. Tests are running smoothly when launched by the EDI too...
+~~Httmock is in the requirements and has been imported by PyCharm.~~ Corrected. Solution was to pip install the requirements.
+New problem is that the tested code isn't found by pytest.
+Tests are running smoothly when launched by the EDI too...
 
 Result is :
 ```
@@ -25,13 +27,13 @@ collected 0 items / 2 errors
 
 =========================================================================== ERRORS =======================================================================================================
 ______________________________________________ ERROR collecting test/integration/discourse_test/test_configuration.py ____________________________________________________________________
-test/integration/discourse_test/test_configuration.py:4: in <module>
-    from httmock import HTTMock, urlmatch
-E   ImportError: No module named httmock
+test/integration/discourse_test/test_configuration.py:6: in <module>
+    from src.discourse import access
+E   ImportError: No module named src.discourse
 ______________________________________________ ERROR collecting test/integration/discourse_test/test_configuration.py ____________________________________________________________________
 ImportError while importing test module '/home/carvallegro/PycharmProjects/rest_test/test/integration/discourse_test/test_configuration.py'.
 Original error message:
-'No module named httmock'
+'No module named src.discourse'
 Make sure your test modules/packages have valid Python names.
 ===================================================================== 2 error in 0.17 seconds ============================================================================================
 ```
