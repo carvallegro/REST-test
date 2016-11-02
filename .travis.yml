@@ -3,11 +3,10 @@ python:
 - '3.4'
 install:
   - pip install -r requirements.txt
-  - pip install   coveralls
+  - pip install coveralls
 script:
-  - python -m unittest discover -sv test
 #  - coverage run --source=test app.py test
-#  - py.test test/ --doctest-modules -v --cov application --cov-report term-missing
+  - py.test test/ --doctest-modules -v --cov application --cov-report term-missing
 after_success:
   - coveralls
 #deploy:
