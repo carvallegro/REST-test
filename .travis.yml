@@ -7,7 +7,7 @@ install:
   - . venv/bin/activate
   - pip install -r requirements.txt
 script:
-  - py.test test/ --doctest-modules -v --cov application --cov-report term-missing
+  - py.test test/ --doctest-modules -v --cov src --cov-report term-missing
 after_success:
   - coveralls
 after_script:

@@ -6,7 +6,8 @@
 .idea/workspace.xml
 templates/
 venv
-**.pyc
+src/**.pyc
+test/**.pyc
 **__pycache__
 **/__pycache__
 **/**/__pycache__
