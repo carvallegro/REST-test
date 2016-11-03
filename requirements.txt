@@ -1,7 +1,9 @@
 gunicorn
-requests
 flask
+virtualenv
+requests
 httmock
 pytest
 pytest-cov
 python-coveralls
+coveralls
