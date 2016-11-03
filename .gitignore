@@ -5,4 +5,8 @@
 .idea/rest_test.iml
 .idea/workspace.xml
 templates/
-**/__pycache__/
+venv
+**.pyc
+**__pycache__
+**/__pycache__
+**/**/__pycache__

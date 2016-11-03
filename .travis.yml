@@ -2,13 +2,16 @@ language: python
 python:
 - '3.4'
 install:
+  - pip install virtualenv
+  - virtualenv venv
+  - . venv/bin/activate
   - pip install -r requirements.txt
-  - pip install coveralls
 script:
-#  - coverage run --source=test app.py test
   - py.test test/ --doctest-modules -v --cov application --cov-report term-missing
 after_success:
   - coveralls
+after_script:
+  - deactivate
 #deploy:
 #  provider: heroku
 #  api_key:

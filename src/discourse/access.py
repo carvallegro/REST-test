@@ -1,6 +1,6 @@
 import requests
 
-from discourse.models.user import User
+from src.discourse.models.user import User
 
 base_url = 'BASE_URL'
 api_key = 'API_KEY'

@@ -1,29 +1,34 @@
 import json
+import os
 from unittest import TestCase, main
 
 from httmock import HTTMock, urlmatch
 
 from src.discourse import access
 
+dirpath = os.path.dirname(os.path.abspath(__file__));
 
 # define matcher:
 # @all_requests
 @urlmatch(netloc=r'(.*\.)?discourse_test\.mock\.com$')
 def basic_mock(url, request):
-    with open('./input/userinfo_vcarmignac.json', 'r') as f:
+    with open(dirpath+'/input/userinfo_vcarmignac.json', 'r') as f:
         result = f.read();
     return {'status_code': 200,
             'content': result}
 
+
 def user_info(username):
     with HTTMock(basic_mock):
-            result = access.user_info(username)
+        result = access.user_info(username)
     return result
 
+
 def user_info_output(username):
-    with open('./output/userinfo_{}.json'.format(username)) as data_file:
+    with open(dirpath+'/output/userinfo_{}.json'.format(username)) as data_file:
         expected = json.load(data_file)
     return expected
+
 
 class TestConfiguration(TestCase):
     def setUp(self):
@@ -40,6 +45,7 @@ class TestConfiguration(TestCase):
         expected = user_info_output(username)
 
         self.assertEqual(json.loads(result.toJSON()), expected)
+
 
 if __name__ == '__main__':
     main()
