@@ -12,28 +12,6 @@ You can generate your API key at `<your_discourse_url>/admin/users/8/<username>`
 
 ## __problems for now__ : 
 can't make pytest pass in CLI because of a import error. pytest command is : `py.test test/ --doctest-modules -v --cov application --cov-report term-missing`
-~~Httmock is in the requirements and has been imported by PyCharm.~~ Corrected. Solution was to pip install the requirements.
-New problem is that the tested code isn't found by pytest.
-Tests are running smoothly when launched by the EDI too...
 
-Result is :
-```
-===================================================================== test session starts ===============================================================================================
-platform linux2 -- Python 2.7.6, pytest-3.0.2, py-1.4.31, pluggy-0.3.1 -- /usr/bin/python
-cachedir: .cache
-rootdir: /home/carvallegro/PycharmProjects/rest_test, inifile: 
-plugins: cov-2.3.1
-collected 0 items / 2 errors 
-
-=========================================================================== ERRORS =======================================================================================================
-______________________________________________ ERROR collecting test/integration/discourse_test/test_configuration.py ____________________________________________________________________
-test/integration/discourse_test/test_configuration.py:6: in <module>
-    from src.discourse import access
-E   ImportError: No module named src.discourse
-______________________________________________ ERROR collecting test/integration/discourse_test/test_configuration.py ____________________________________________________________________
-ImportError while importing test module '/home/carvallegro/PycharmProjects/rest_test/test/integration/discourse_test/test_configuration.py'.
-Original error message:
-'No module named src.discourse'
-Make sure your test modules/packages have valid Python names.
-===================================================================== 2 error in 0.17 seconds ============================================================================================
-```
+* ~~Httmock is in the requirements and has been imported by PyCharm.~~ Corrected. Solution was to pip install the requirements.
+* ~~New problem is that the tested code isn't found by pytest.~~ Corrected. Bad imports and I forgot to use virtualenv

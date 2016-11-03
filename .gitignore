@@ -1,13 +1,10 @@
 
 .cache/
-.idea/misc.xml
-.idea/modules.xml
-.idea/rest_test.iml
-.idea/workspace.xml
+.idea/**
 templates/
 venv
-src/**.pyc
-test/**.pyc
-**__pycache__
-**/__pycache__
-**/**/__pycache__
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+**.py[cod]
+**$py.class
