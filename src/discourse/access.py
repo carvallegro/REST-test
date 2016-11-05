@@ -1,6 +1,7 @@
 import requests
 
-from src.discourse.models.user import User
+from requests import HTTPError
+from src.discourse.models.user import User, NoUserError
 
 base_url = 'BASE_URL'
 api_key = 'API_KEY'
@@ -23,7 +24,7 @@ def url(action):
 
 def get(action, cls=None, data={}):
     request_result = requests.get(url(action), data=data)
-    if request_result.status_code is not requests.codes.ok:
+    if request_result.status_code != requests.codes.ok:
         request_result.raise_for_status()
 
     json_result = request_result.json()
@@ -35,5 +36,10 @@ def get(action, cls=None, data={}):
 def latest():
     return get('/latest.json')
 
+
 def user_info(username):
-    return get('/users/{0}.json'.format(username), cls=User)
+    try:
+        return get('/users/{0}.json'.format(username), cls=User)
+    except HTTPError as error:
+        if error.response.status_code == requests.codes.not_found:
+            raise NoUserError(username)

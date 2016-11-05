@@ -1,0 +1,47 @@
+{
+
+    "badges": [
+        {
+            "badge_type_id": 3,
+            "icon": "fa-user",
+            "id": 2,
+            "image": null,
+            "name": "Member"
+        },
+        {
+            "badge_type_id": 3,
+            "icon": "fa-user-plus",
+            "id": 25,
+            "image": null,
+            "name": "Promoter"
+        },
+        {
+            "badge_type_id": 3,
+            "icon": "fa-certificate",
+            "icon": "fa-certificate",
+            "id": 14,
+            "image": null,
+            "name": "First Link"
+        }
+    ],
+    "user": {
+        "admin": true,
+        "avatar_template": null,
+        "badge_count": 13,
+        "created_at": "2016-08-02T13:04:00.265Z",
+        "custom_avatar_template": "/user_avatar/sholmes/{size}/13_1.png",
+        "custom_fields": { },
+        "email": "sholmes@ippon.fr",
+        "id": 8,
+        "last_posted_at": "2016-10-07T14:26:05.513Z",
+        "last_seen_at": "2016-11-01T15:11:22.581Z",
+        "locale": "en",
+        "location": "Paris",
+        "name": "Sherlock",
+        "post_count": 28,
+        "profile_background": "/uploads/default/original/1X/3aca87bf90e759bd90f5feed45397d8541a65d18.jpg",
+        "system_avatar_template": "/letter_avatar_proxy/v2/letter/v/e9c0ed/{size}.png",
+        "username": "sholmes"
+    }
+
+}

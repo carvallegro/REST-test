@@ -3,6 +3,8 @@ import os
 from flask import Blueprint, jsonify, make_response
 
 from src.discourse import access
+from src.discourse.models import user
+
 
 access.configuration(_base_url=os.environ['DISCOURSE_BASE_URL'],
                      _api_key=os.environ['DISCOURSE_API_KEY'],
@@ -24,8 +26,10 @@ def latest_posts():
 
 @discourse_blueprint.route('/user/<username>/infos')
 def user_infos(username):
-    infos = access.user_info(username)
-    response = make_response(infos.toJSON())
+    try:
+        response = make_response(access.user_info(username).toJSON())
+    except user.NoUserError as err :
+        response = make_response(err.toJSON())
     response.headers['Content-Type'] = 'application/json';
     return response
 

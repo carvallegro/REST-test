@@ -1,19 +1,9 @@
 import json
 
-class Badge:
-    def __init__(self, json):
-        self.id = json['id']
-        self.name = json['name']
-        self.type = json['badge_type_id']
-        self.icon = json['icon']
-        self.image = json['image']
-
-    def toJSON(self):
-        return json.dumps(self, default=lambda o: o.__dict__)
 
 class User:
     def __init__(self, json):
-        self.badges = list(map(lambda badge : Badge(badge), json['badges']))
+        self.badges = list(map(lambda badge: Badge(badge), json['badges']))
 
         user = json['user']
         self.id = user['id']
@@ -30,3 +20,25 @@ class User:
 
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__)
+
+
+class Badge:
+    def __init__(self, json):
+        self.id = json['id']
+        self.name = json['name']
+        self.type = json['badge_type_id']
+        self.icon = json['icon']
+        self.image = json['image']
+
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__)
+
+
+class NoUserError(Exception):
+    def __init__(self, username, *args, **kwargs):
+        self.username = username
+
+    def toJSON(self):
+        return json.dumps({
+            'message': '{user} does\'n exist on Discouse'.format(user=self.username)
+        })

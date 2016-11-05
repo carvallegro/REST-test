@@ -1,0 +1,33 @@
+{
+    "username": "sholmes",
+    "last_posted": "2016-10-07T14:26:05.513Z",
+    "location": "Paris",
+    "badges": [
+        {
+            "image": null,
+            "icon": "fa-user",
+            "name": "Member",
+            "type": 3,
+            "id": 2
+        },
+        {
+            "image": null,
+            "icon": "fa-user-plus",
+            "name": "Promoter",
+            "type": 3,
+            "id": 25
+        },
+        {
+            "image": null,
+            "icon": "fa-certificate",
+            "name": "First Link",
+            "type": 3,
+            "id": 14
+        }
+    ],
+    "avatar_url_suffix": "/letter_avatar_proxy/v2/letter/v/e9c0ed/32.png",
+    "admin": true,
+    "last_seen": "2016-11-01T15:11:22.581Z",
+    "name": "Sherlock",
+    "id": 8
+}
