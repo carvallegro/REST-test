@@ -9,8 +9,7 @@ app.register_blueprint(discourse_blueprint, url_prefix='/discourse')
 
 @app.route('/')
 def hello_world():
-    return latest()
-
+    return "Hello World from root"
 
 if __name__ == '__main__':
     app.run()
